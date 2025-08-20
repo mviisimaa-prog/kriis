@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <title>Õppus – Torm</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 30px;
+    }
+    .message {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      padding: 32px;
+      display: inline-block;
+      max-width: 500px;
+      text-align: left;
+    }
+    h2 {
+      color: red;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 42px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4d4d;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e60000;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h2>Päästemet: ÕPPUS!</h2>
+    <p>Lähenemas suur torm 23.08.2025 kl 12.00. 
+    <b>Ohuala</b> 1 km Märjamaa Rahvamajast. 
+    Evakueeru kohe! Reaalset ohtu ei ole! 
+    Lisainfo: 1247, <a href="https://kriis.ee" target="_blank">kriis.ee</a></p>
+
+    <hr>
+
+    <h2>Rescue Board: EXERCISE!</h2>
+    <p>A major storm approaching on 23.08.2025 at 12:00. 
+    <b>Danger area</b>: 1 km from Märjamaa Community Centre. 
+    Evacuate immediately! No real danger! 
+    Additional info: 1247, <a href="https://kriis.ee" target="_blank">kriis.ee</a></p>
+  </div>
+
+  <br>
+  <button onclick="toggleAudio()">⏸️ Peata sireen</button>
+
+  <audio id="alarm" autoplay loop>
+    <source src="Sireeni heli.wav" type="audio/wav">
+    Sinu brauser ei toeta helifaili esitust.
+  </audio>
+
+  <script>
+    function toggleAudio() {
+      const audio = document.getElementById('alarm');
+      if (audio.paused) {
+        audio.play();
+        event.target.textContent = "⏸️ Peata sireen";
+      } else {
+        audio.pause();
+        event.target.textContent = "▶️ Käivita sireen";
+      }
+    }
+  </script>
+</body>
+</html>
